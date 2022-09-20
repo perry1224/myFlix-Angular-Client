@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class EditProfileComponent implements OnInit {
 
-  @Input() userData: any = {};
+  @Input() userData: any = {}; 
 
   constructor(
     public fetchApiData: FetchApiDataService,

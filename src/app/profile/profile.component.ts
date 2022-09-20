@@ -12,7 +12,7 @@ import { EditProfileComponent } from '../edit-profile/edit-profile.component';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-user: any ={};
+user: any ={}; 
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -23,6 +23,7 @@ user: any ={};
 
   ngOnInit(): void {
     this.getUser();
+   
   }
 
 getUser(): void {
