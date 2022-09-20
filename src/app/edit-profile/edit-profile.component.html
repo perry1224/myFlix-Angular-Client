@@ -1,0 +1,28 @@
+<mat-card class="edit-profile-dialog">
+  <mat-card-header>
+      <mat-card-title class="edit-profile-dialog-title">Edit profile </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="edit-profile-dialog-content">
+      <form>
+          <mat-form-field>
+              <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username">
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput [(ngModel)]="userData.Password" placeholder="Password" type="password" name="Password">
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput [(ngModel)]="userData.Email" placeholder="Email" type="email" name="Email">
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" type="date" name="Birthday">
+          </mat-form-field>
+      </form>
+  </mat-card-content>
+  <mat-card-actions class="edit-profile-actions">
+      <button mat-raised-button (click)="editUser()" color="primary">
+          Update details
+      </button>
+      <button mat-icon-button color="primary" mat-dialog-close aria-label="Example icon button with a home icon">
+        <mat-icon>close</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
