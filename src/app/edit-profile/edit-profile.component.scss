@@ -1,0 +1,21 @@
+.edit-profile-dialog {
+  background-color: lavender;
+  margin-top: 0px;
+  box-shadow: none;
+}
+
+.edit-profile-dialog-title {
+  color: olive;
+}
+
+.edit-profile-dialog-content {
+  color: olive;
+}
+
+::ng-deep .edit-profile-custom>mat-dialog-container {
+  background-color: lavender;
+}
+
+.edit-profile-actions {
+  display: flex
+}
