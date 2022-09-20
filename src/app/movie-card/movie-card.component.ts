@@ -14,6 +14,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component'
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+  favoriteMovies: any[] = [];
  
 
   constructor(
@@ -23,6 +24,15 @@ export class MovieCardComponent implements OnInit {
   ) { }
 ngOnInit(): void {
   this.getMovies();
+  this.getFavoriteMovies();
+}
+
+getFavoriteMovies(): void {
+  this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
+    this.favoriteMovies = resp;
+    console.log(this.favoriteMovies);
+    return this.favoriteMovies;
+  });
 }
 
 getMovies(): void {
@@ -67,6 +77,28 @@ openSynopsisDialog(title: string, description: string): void {
   });
 
 }
+addFavoriteMovie(id: string): void {
+  console.log(id);
+  this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
+    console.log(result);
+    this.ngOnInit();
+  })
+}
+/**
+ * removes a movie from the list of favorite movies via an API call
+ * @param id 
+ * @function removeFavoriteMovie
+ */
+ deleteFromFavorites(id: string): void {
+  console.log(id);
+  this.fetchApiData.deleteFromFavorites(id).subscribe((result) => {
+    console.log(result);
+    this.ngOnInit();
+  })
+}
 
+isFav(id: string): boolean {
+  return this.favoriteMovies.includes(id)
+}
 
 }
