@@ -4,6 +4,7 @@ import { FetchApiDataService } from '../fetch-api-data.service'
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
 
 
 @Component({
@@ -42,4 +43,17 @@ getMovies(): void {
       // Assign dialog width
       width: '500px'
     });
-}}
+}
+
+openGenreDialog(name: string, description: string): void {
+  this.dialog.open(GenreComponent, {
+    data: {
+      Name: name,
+      Description: description,
+    },
+    // Assign dialog width
+    width: '500px'
+  });
+}
+
+}

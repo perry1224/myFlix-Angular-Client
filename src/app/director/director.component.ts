@@ -17,4 +17,6 @@ export class DirectorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this)
   }
+}

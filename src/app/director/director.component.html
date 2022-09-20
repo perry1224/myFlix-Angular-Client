@@ -1,4 +1,11 @@
 <mat-card class="director-dialog">
+
+<div class="dialog-close-wrapper">
+  <button mat-icon-button color="primary" mat-dialog-close aria-label="Example icon button with a home icon">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
   <mat-card-title class="director-dialog-title">{{ data.Name }}</mat-card-title>
   <br />
   <mat-dialog-content class="director-dialog-content">
@@ -7,9 +14,7 @@
       <b>Bio: </b>{{ data.Bio }}
   </mat-dialog-content>
   <mat-card-actions class="director-actions">
-      <button class="director-close-button" mat-stroked-button aria-label="Close"
-          mat-dialog-close color="primary">
-          X
-      </button>
+
+   
   </mat-card-actions>
 </mat-card>

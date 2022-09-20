@@ -1,29 +1,22 @@
-<div style="display: flex;">
+<div class="card-wrapper">
   <mat-card *ngFor="let movie of movies; let i=index" style="flex: 1 1 auto;">
     <mat-card-header>
         <mat-card-title>{{movie.Title}}</mat-card-title>
         <mat-card-subtitle>Directed by:
             <button mat-button
-                (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birthday)"
+                (click)="openDirectorDialog(movie.Director.Name, movie.Director.BIO, movie.Director.DOB)"
                 color="primary">
                 {{movie.Director.Name}}
             </button>
         </mat-card-subtitle>
     </mat-card-header>
         <img src={{movie.ImagePath}} alt= {{movie.Title}} />
+        
         <mat-card-actions>
-            <button
-                mat-button
-                color="primary"
-            >
-                Genre
-            </button>
-            <!-- <button
-                mat-button
-                color="primary"
-            >
-                Director
-            </button> -->
+          <button mat-button (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)" color="primary">
+            Genre
+        </button>
+
             <button
                 mat-button
                 color="primary"
