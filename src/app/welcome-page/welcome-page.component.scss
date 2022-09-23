@@ -1,0 +1,23 @@
+.main-page {
+  justify-content: center;
+  display:flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.welcome-card {
+  margin-top: 50px;
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  box-shadow: 10px 5px 5px;
+  background-color: whitesmoke;
+}
+
+.welcome-card-header {
+  margin-bottom: 20px;
+  color: olive;
+  display: flex;
+  justify-content: center;
+}
+
