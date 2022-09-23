@@ -37,11 +37,27 @@
 .favorite-movies {
     border: 1.5px solid black;
   box-shadow: 1px 2px black;
+  color: olive;
+  background-color: whitesmoke;
+  margin: 10px;
 }
 
 .favorite-movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+}
+
+.delete-fav-button {
+  margin-left: 45%;
+  
+}
+
+.button {
+  text-transform: capitalize;
+align-content: center;
+flex-wrap: nowrap;
+left: 23%;
 
 }
