@@ -30,11 +30,13 @@
 
     <!-- Display Favorite Movies -->
   
+  
+  <div class="favorite-movies-header">
+      <h2 class="mat-card-favorite-movies">Favorite Movies</h2>
   </div>
-  <div class="favorite-movies-container">
-      <h2 class="mat-card-favorite-movies">Favorite Movies</h2></div>
-   <div>
-      
+  
+   <div class="favorite-movies-container">
+     
     <mat-card *ngFor="let movie of favoriteMovies" class="favorite-movies">
       <mat-card-header class="favorite-movies-title-header">
         <mat-card-title class="favorite-movies-title">
@@ -105,4 +107,4 @@
       </mat-card-actions>
     </mat-card>
   </div>
-
+</div>
