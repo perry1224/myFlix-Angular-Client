@@ -4,6 +4,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+import { GenreComponent } from '../genre/genre.component';
+import { DirectorComponent } from '../director/director.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
+
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 type Movie=    {
@@ -87,5 +91,54 @@ deleteProfile(): void {
       localStorage.clear();
     });
   }
+}
+
+openDirectorDialog(title: string, name: string, bio: string, birth: string): void {
+  this.dialog.open(DirectorComponent, {
+    data: {
+      Title: title,
+      Name: name,
+      Bio: bio,
+      Birthday: birth,
+    },
+    width: '500px',
+    
+  });
+}
+
+openSynopsis(title: string, imagePath: any, description: string): void {
+  this.dialog.open(SynopsisComponent, {
+    data: {
+      Title: title,
+      ImagePath: imagePath,
+      Description: description,
+    },
+    width: '500px',
+   
+  });
+}
+
+openGenreDialog(title: string, name: string, description: string): void {
+  this.dialog.open(GenreComponent, {
+    data: {
+      Title: title,
+      Name: name,
+      Description: description,
+    },
+    width: '500px',
+   
+  });
+  
+}
+
+deleteFavoriteMovies(MovieID: string, Title: string): void {
+  this.fetchApiData.deleteFromFavorites(MovieID).subscribe((res: any) => {
+    this.snackBar.open(`Successfully removed ${Title} from favorite movies.`, 'OK', {
+      duration: 4000, verticalPosition: 'top'
+    });
+    setTimeout(function () {
+      window.location.reload();
+    }, 4000);
+  });
 }
 }

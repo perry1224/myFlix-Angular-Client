@@ -28,3 +28,15 @@
   color: olive;
 }
 
+.favorite-movies-header {
+  margin: 25px;
+  margin-left: 50px;
+  
+}
+
+.favorite-movies {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 24px;
+  
+}
