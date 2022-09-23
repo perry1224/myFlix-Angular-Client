@@ -28,8 +28,8 @@ ngOnInit(): void {
 }
 
 getFavoriteMovies(): void {
-  this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-    this.favoriteMovies = resp;
+  this.fetchApiData.getUser().subscribe((resp: any) => {
+    this.favoriteMovies = resp.FavoriteMovies;
     console.log(this.favoriteMovies);
     return this.favoriteMovies;
   });

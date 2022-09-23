@@ -107,7 +107,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .get(apiUrl + `users/${username}`, {
           headers: new HttpHeaders({
@@ -124,7 +124,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .get(apiUrl + `users/${username}/movies`, {
           headers: new HttpHeaders({
@@ -142,7 +142,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .post(apiUrl + `users/${username}/movies/${movieID}`, null, {
           headers: new HttpHeaders({
@@ -160,7 +160,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .put(apiUrl + `users/${username}`, userDetails, {
           headers: new HttpHeaders({
@@ -178,7 +178,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .delete(apiUrl + `users/${username}`, {
           headers: new HttpHeaders({
@@ -196,7 +196,7 @@ export class FetchApiDataService {
       // Get Authorization token stored in local storage
       const token = localStorage.getItem('token');
       // Get Username stored in local storage
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http
         .delete(apiUrl + `users/${username}/movies/${movieID}`, {
           headers: new HttpHeaders({
