@@ -27,6 +27,11 @@ ngOnInit(): void {
   this.getFavoriteMovies();
 }
 
+  /**
+   * Gets favorite movies from api call and sets the favorite movies variable to return JSON file
+   * @returns array holding ids of user's favorite movies
+   * @function getFavoriteMovies
+   */
 getFavoriteMovies(): void {
   this.fetchApiData.getUser().subscribe((resp: any) => {
     this.favoriteMovies = resp.FavoriteMovies;
@@ -38,7 +43,7 @@ getFavoriteMovies(): void {
   /**
    * Gets movies from api call and sets the movies state to return JSON file
    * @returns array holding movies objects
-   * @function getAllMovies
+   * @function getMovies
    */
 getMovies(): void {
   this.fetchApiData.getAllMovies().subscribe((resp: any) => {

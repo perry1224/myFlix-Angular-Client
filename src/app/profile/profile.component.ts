@@ -51,6 +51,11 @@ export class ProfileComponent implements OnInit {
     this.getMovies();
   }
 
+    /**
+   * Gets user data from api call and sets the user variable to returned JSON file
+   * @returns object holding user information
+   * @function getUser
+   */
 getUser(): void {
   this.fetchApiData.getUser().subscribe((user:any)=> {
     this.user = user;
@@ -66,6 +71,11 @@ getUser(): void {
   
 }
 
+  /**
+   * Gets movies from api call and sets the movies state to return JSON file
+   * @returns array holding movies objects
+   * @function getAllMovies
+   */
 getMovies(): void {
   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -74,11 +84,20 @@ getMovies(): void {
     });
   }
 
+
+    /**
+   * opens the edit profile dialog from EditProfileComponent to allow user to edit their details
+   */
 openEditProfileDialog(): void {
   this.dialog.open(EditProfileComponent, {
     width: '300px'
   })
 }
+
+  /**
+   * deletes the user profile, redirects to welcome screen
+   * @function deleteProfile
+   */
 deleteProfile(): void {
   if (confirm('Are you sure you want to delete your account? This cannnot be undone.')) {
     this.router.navigate(['welcome']).then(() => {
@@ -93,6 +112,14 @@ deleteProfile(): void {
   }
 }
 
+   /**
+  * opens the user director dialog from DirectorComponent to displaying details
+  * @param title
+  * @param name
+  * @param bio
+  * @param birth
+  */
+
 openDirectorDialog(title: string, name: string, bio: string, birth: string): void {
   this.dialog.open(DirectorComponent, {
     data: {
@@ -106,6 +133,13 @@ openDirectorDialog(title: string, name: string, bio: string, birth: string): voi
   });
 }
 
+
+  /**
+   * opens the dialog to display the SynopsisCarsComponent
+   * @param title {string}
+   * @param imagePath {any}
+   * @param description {string}
+   */
 openSynopsis(title: string, imagePath: any, description: string): void {
   this.dialog.open(SynopsisComponent, {
     data: {
@@ -117,7 +151,11 @@ openSynopsis(title: string, imagePath: any, description: string): void {
    
   });
 }
-
+  /**
+  * opens the user genre dialog from GenreComponent to displaying details
+  * @param name
+  * @param description
+  */
 openGenreDialog(title: string, name: string, description: string): void {
   this.dialog.open(GenreComponent, {
     data: {
@@ -131,6 +169,10 @@ openGenreDialog(title: string, name: string, description: string): void {
   
 }
 
+  /**
+   * deletes a user FavoriteMovie
+   * @function deleteFavoriteMovies
+   */
 deleteFavoriteMovies(MovieID: string, Title: string): void {
   this.fetchApiData.deleteFromFavorites(MovieID).subscribe((res: any) => {
     this.snackBar.open(`Successfully removed ${Title} from favorite movies.`, 'OK', {
