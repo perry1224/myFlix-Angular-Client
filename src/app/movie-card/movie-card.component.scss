@@ -18,3 +18,11 @@ object-fit: cover;
   display: flex;
   justify-content: end;
 }
+
+@media (max-width: 750px) {
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
